@@ -1,0 +1,40 @@
+{{! My Template }}
+
+{{summaryPlaceholder}}
+{{extendedSummaryPlaceholder}}
+{{#parametersExist}}
+Параметры
+----------
+{{#args}}
+{{var}}: {{typePlaceholder}}
+    {{descriptionPlaceholder}}
+{{/args}}
+{{#kwargs}}
+{{var}}: {{typePlaceholder}} = {{&default}} (опционально)
+    {{descriptionPlaceholder}}.
+{{/kwargs}}
+{{/parametersExist}}
+{{#exceptionsExist}}
+
+Возможные ошибки
+-----------------
+{{#exceptions}}
+    {{type}}: {{descriptionPlaceholder}}
+{{/exceptions}}
+{{/exceptionsExist}}
+{{#returnsExist}}
+
+Возвращает
+----------
+{{#returns}}
+{{var}}: {{typePlaceholder}}
+    {{descriptionPlaceholder}}
+{{/returns}}
+{{/returnsExist}}
+{{#yieldsExist}}
+
+Генераторы:
+{{#yields}}
+    {{typePlaceholder}}: {{descriptionPlaceholder}}
+{{/yields}}
+{{/yieldsExist}}
